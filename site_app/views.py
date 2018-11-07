@@ -12,3 +12,7 @@ class HomeView(generic.TemplateView):
 class RecruitView(generic.DetailView):
 	model = Recruit
 	template_name = 'recruit.html'
+
+class RecruitListView(generic.ListView):
+	model = Recruit
+	template_name = 'recruit_list.html'

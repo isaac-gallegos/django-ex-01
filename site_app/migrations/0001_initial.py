@@ -19,4 +19,4 @@ class Migration(migrations.Migration):
                 ('age', models.IntegerField()),
             ],
         ),
-    ]
+]
