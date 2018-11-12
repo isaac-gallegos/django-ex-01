@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from site_app.views import HomeView, RecruitView, RecruitListView
+from site_app.views import HomeView, RecruitView, JobView, JobListView, RecruitListView, RecruitJobListView
 
 urlpatterns = [
 	path('', HomeView.as_view(), name='home'),
 	path('recruits/', RecruitListView.as_view(), name='recruit_list'), # https://docs.djangoproject.com/en/2.1/intro/tutorial04/#amend-urlconf
 	path('recruit/<int:pk>/', RecruitView.as_view(), name='recruit'), # https://docs.djangoproject.com/en/2.1/intro/tutorial04/#amend-urlconf
+    path('job/<int:pk>/', JobView.as_view(), name='job'),
+    path('jobs/', JobListView.as_view(), name='job_list'),
+    path('recruitjob/', RecruitJobListView.as_view(), name='recruit_job'),
 	path('admin/', admin.site.urls),
 ]
